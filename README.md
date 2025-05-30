@@ -1,4 +1,53 @@
-# eLearning With GenA And RAG
+# 📚 eLearning with GenAI And RAG
+
+This project demonstrates how to build a Retrieval-Augmented Generation (RAG) based eLearning solution.
+
+## 🔧 Setup Steps
+
+### 1. Data Source (Amazon S3)
+- Create an **S3 bucket**.
+- Upload all relevant document files into this bucket.
+
+### 2. Create Amazon Bedrock Knowledge Base
+- Link the **S3 bucket** as the data source.
+- Configure:
+  - **Chunking strategy**
+  - **Embedding model**
+  - **Vector store** (e.g., Amazon OpenSearch, Pinecone)
+
+### 3. Create AWS Lambda Function
+- Create an **IAM role** with appropriate permissions.
+- **Increase the timeout** setting for the function (e.g., to 60 seconds).
+- Implement the `RetrieveAndGenerate` API logic to:
+  - Query the knowledge base
+  - Generate responses using Bedrock model
+
+  **Model ARN:**
+  ```json
+  'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-instant-v1'
+  ```
+  
+### 4. Create REST API
+
+- Use **Amazon API Gateway** to create a new **REST API**.
+- Define a new resource and method (e.g., `POST /generate`).
+
+### 5. Integrate Lambda with API Gateway and Frontend React App
+
+- **Create and link the API Gateway** endpoint to your **AWS Lambda function**.
+- Ensure the **Lambda function** has the necessary permissions for invocation.
+- **Deploy the API** to a stage (e.g., `dev`, `prod`) to expose the `RetrieveAndGenerate` endpoint over HTTP.
+
+### 6. Create a Frontend React App (Client Integration)
+
+- Develop a **React.js frontend** to consume the API Gateway endpoint.
+- Use `fetch` or `axios` to call the deployed REST API.
+- Display the generated responses from the Bedrock Knowledge Base to users via the UI.
+- Ensure **CORS settings** in API Gateway allow requests from your frontend domain or local environment during development.
+
+> With above steps, your RAG-based system is fully integrated end-to-end — from document ingestion to user interaction via a web app.
+
+---
 
 ## What is RetrieveAPI ?
 AWS Bedrock **RetrieveAPI** is a service feature designed to help you efficiently **retrieve relevant documents or data** from your own private data sources or external data repositories to use as context for foundation model queries.
