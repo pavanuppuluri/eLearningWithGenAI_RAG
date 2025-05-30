@@ -1,5 +1,6 @@
 # eLearning With GenA And RAG
 
+## What is RetrieveAPI ?
 AWS Bedrock **RetrieveAPI** is a service feature designed to help you efficiently **retrieve relevant documents or data** from your own private data sources or external data repositories to use as context for foundation model queries.
 
 ### What does it do?
@@ -27,4 +28,34 @@ AWS Bedrock **RetrieveAPI** is a service feature designed to help you efficientl
 
 
 <img width="1462" alt="image" src="https://github.com/user-attachments/assets/f5dbf252-5c4a-4631-b244-40c6868f030f" />
+
+---
+
+## What is RetrieveAndGenerateAPI? 
+
+AWS Bedrock **RetrieveAndGenerateAPI** is a higher-level API that **combines retrieval and generation into a single step**, enabling you to build intelligent applications that automatically pull relevant information from your data and generate responses using a foundation model.
+
+### What does it do?
+
+- **Automatically retrieves relevant data** from your configured knowledge base (documents, repositories, etc.).
+- **Passes that data as context** to a foundation model.
+- **Generates a final response** using the foundation model, grounded in the retrieved data.
+- Simplifies the Retrieval-Augmented Generation (RAG) pattern by handling both steps internally.
+
+### Why use RetrieveAndGenerateAPI in AWS Bedrock?
+
+- You don’t need to **manually orchestrate retrieval + generation** — it's done in one API call.
+- Ideal for building **intelligent assistants, chatbots, and Q&A systems** that need to reason over private or enterprise-specific data.
+- Supports **multi-modal data sources** like PDFs, web pages, or structured content in vector stores.
+
+### How it works (high-level):
+
+1. **You send a query** to the RetrieveAndGenerateAPI.
+2. The API retrieves relevant information from your **Bedrock knowledge base**.
+3. It automatically passes the retrieved context to a **chosen foundation model** (e.g., Claude, Titan, or GPT).
+4. The model returns a **grounded, natural-language response** based on your query and the retrieved data.
+
+In short, RetrieveAndGenerateAPI abstracts the entire RAG pipeline, allowing you to focus on building applications without managing retrieval and prompt engineering separately.
+
+
 
