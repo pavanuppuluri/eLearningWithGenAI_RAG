@@ -88,7 +88,7 @@ button:disabled {
 .circular-image {
   width: 180px;
   height: 180px;
-  border-radius: 20%;
+  border-radius: 50%;
   object-fit: cover;
   object-position: center;
   border: 2px solid darkgreen;  /* <-- Dark green border */
