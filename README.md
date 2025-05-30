@@ -57,5 +57,7 @@ AWS Bedrock **RetrieveAndGenerateAPI** is a higher-level API that **combines ret
 
 In short, RetrieveAndGenerateAPI abstracts the entire RAG pipeline, allowing you to focus on building applications without managing retrieval and prompt engineering separately.
 
+<img width="1468" alt="image" src="https://github.com/user-attachments/assets/c01f629c-f743-4750-9e70-3788f92c7afb" />
+
 
 
