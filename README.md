@@ -59,5 +59,47 @@ In short, RetrieveAndGenerateAPI abstracts the entire RAG pipeline, allowing you
 
 <img width="1468" alt="image" src="https://github.com/user-attachments/assets/c01f629c-f743-4750-9e70-3788f92c7afb" />
 
+### 🧠 AWS Lambda Function to Call `retrieve_and_generate` from Bedrock Knowledge Base
 
+#### Example
+Below is a sample AWS Lambda function in **Python**, wrapping the `retrieve_and_generate` API call using `boto3` for AWS Bedrock:
+
+```python
+import boto3
+
+def lambda_handler(event, context):
+    user_prompt = event.get('prompt', 'What is Kubernetes?')
+
+    # Initialize the Bedrock Knowledge Base client
+    client_bedrock_knowledgebase = boto3.client('bedrock-agent-runtime', region_name='us-west-2')
+
+    try:
+        # Call RetrieveAndGenerate API
+        response = client_bedrock_knowledgebase.retrieve_and_generate(
+            input={
+                'text': user_prompt
+            },
+            retrieveAndGenerateConfiguration={
+                'type': 'KNOWLEDGE_BASE',
+                'knowledgeBaseConfiguration': {
+                    'knowledgeBaseId': '9I620UL64M',
+                    'modelArn': 'arn:aws:bedrock:us-west-2::foundation-model/anthropic.claude-instant-v1'
+                }
+            }
+        )
+
+        # Return the model response
+        return {
+            'statusCode': 200,
+            'body': response
+        }
+
+    except Exception as e:
+        return {
+            'statusCode': 500,
+            'error': str(e)
+        }
+```
+
+Happy coding!!!
 
