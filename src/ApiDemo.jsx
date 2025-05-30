@@ -28,7 +28,7 @@ function ApiDemo() {
   };
 
   return (
-    <div className="container" style={{ width: '75vw', margin: '0 auto' }}>
+    <div className="container" style={{ width: '50vw', margin: '0 auto' }}>
       <div className="card">
         <h2><span className="highlight-blue">eLearning with GenAI & RAG</span></h2>
         <label htmlFor="input">Question?</label>
