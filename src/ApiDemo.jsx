@@ -30,20 +30,20 @@ function ApiDemo() {
   return (
     <div className="container" style={{ width: '75vw', margin: '0 auto' }}>
       <div className="card">
-        <h2><span className="highlight-blue">Incident Summarization</span> using Cohere</h2>
-        <label htmlFor="input">Incident Details</label>
+        <h2><span className="highlight-blue">eLearning with GenAI & RAG</span></h2>
+        <label htmlFor="input">Question?</label>
         <textarea
           id="input"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Paste your case details here..."
+          placeholder="Paste your question here..."
           style={{ height: '25vh' }}
         />
         <button onClick={handleSubmit} disabled={loading}>
-          {loading ? 'Summarizing...' : 'Submit'}
+          {loading ? 'Preparing answer...' : 'Ask'}
         </button>
 
-        <label htmlFor="response" style={{ marginTop: '1.5rem' }}>Incident Summary </label>
+        <label htmlFor="response" style={{ marginTop: '1.5rem' }}>Answer</label>
         <textarea
           id="response"
           className="response-box"
