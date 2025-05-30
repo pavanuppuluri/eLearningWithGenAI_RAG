@@ -28,38 +28,40 @@ function ApiDemo() {
   };
 
   return (
-    <div className="container" style={{ width: '50vw', margin: '0 auto', textAlign: 'center' }}>
-      {/* Circular Image */}
+  <div className="container" style={{ width: '50vw', margin: '0 auto', textAlign: 'center' }}>
+    {/* Image + Heading in same row */}
+    <div className="header-row">
       <img
         src="/guru-shishya.png"
         alt="Guru teaching students"
         className="circular-image"
       />
-      <div className="card">
-        <h2><span className="highlight-blue">eLearning with GenAI & RAG</span></h2>
-        <label htmlFor="input">Question?</label>
-        <textarea
-          id="input"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Paste your question here..."
-          style={{ height: '10vh' }}
-        />
-        <button onClick={handleSubmit} disabled={loading}>
-          {loading ? 'Preparing answer...' : 'Ask'}
-        </button>
-
-        <label htmlFor="response" style={{ marginTop: '1.5rem' }}>Answer</label>
-        <textarea
-          id="response"
-          className="response-box"
-          readOnly
-          value={response}
-          style={{ height: '15vh' }}
-        />
-      </div>
+      <h2 className="heading-text"><span className="highlight-blue">eLearning with GenAI & RAG</span></h2>
     </div>
-  );
+    <div className="card">
+      <label htmlFor="input">Question?</label>
+      <textarea
+        id="input"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Paste your question here..."
+        style={{ height: '10vh' }}
+      />
+      <button onClick={handleSubmit} disabled={loading}>
+        {loading ? 'Preparing answer...' : 'Ask'}
+      </button>
+
+      <label htmlFor="response" style={{ marginTop: '1.5rem' }}>Answer</label>
+      <textarea
+        id="response"
+        className="response-box"
+        readOnly
+        value={response}
+        style={{ height: '15vh' }}
+      />
+    </div>
+  </div>
+);
 }
 
 export default ApiDemo;
