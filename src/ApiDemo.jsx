@@ -43,7 +43,7 @@ function ApiDemo() {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Paste your question here..."
-          style={{ height: '25vh' }}
+          style={{ height: '10vh' }}
         />
         <button onClick={handleSubmit} disabled={loading}>
           {loading ? 'Preparing answer...' : 'Ask'}
@@ -55,7 +55,7 @@ function ApiDemo() {
           className="response-box"
           readOnly
           value={response}
-          style={{ height: '25vh' }}
+          style={{ height: '15vh' }}
         />
       </div>
     </div>
