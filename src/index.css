@@ -109,3 +109,8 @@ button:disabled {
   margin: 0;
 }
 
+.highlight-blue {
+  color: blue;
+  font-weight: bold;
+}
+
