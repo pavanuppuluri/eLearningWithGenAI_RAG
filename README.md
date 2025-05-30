@@ -26,4 +26,5 @@ AWS Bedrock **RetrieveAPI** is a service feature designed to help you efficientl
 4. The returned data can be **passed along with the query to a foundation model** for an informed and precise answer.
 
 
+<img width="1462" alt="image" src="https://github.com/user-attachments/assets/f5dbf252-5c4a-4631-b244-40c6868f030f" />
 
